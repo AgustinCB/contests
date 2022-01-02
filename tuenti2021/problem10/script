@@ -1,0 +1,38 @@
+#!/bin/bash
+
+tcpdump -x -r inputs/icmps.pcap | grep "0x0010:" | awk '{print $8}' > problem10/echo_data.txt
+tcpdump -x -r inputs/icmps.pcap | grep "0x0010:" | awk '{print $7}' > problem10/echo_seq.txt
+tcpdump -x -r inputs/icmps.pcap | grep "0x0010:" | awk '{print $6}' > problem10/echo_id.txt
+cat problem10/echo_id.txt| python -c "import sys; print(''.join([chr(int(l.strip(), 16)) for l in sys.stdin]))"
+
+# This prints: "What a mess, you will need to reorder everything to get the price" over and over
+
+cat problem10/echo_seq.txt| python -c "import sys; print(sorted([int(l.strip(), 16) for l in sys.stdin]))"
+
+# This prints the seq as a sorted array from 1 to 213. Clearly have to reorder the letters in the id
+
+tcpdump -r inputs/icmps.pcap | awk '{print $12 " " $10}' | tr -d ',' | sort -n | awk '{print $2}' > problem10/sorted_ids.txt
+
+cat problem10/sorted_ids.txt| python -c "import sys; print(''.join([chr(int(l.strip(), 10)) for l in sys.stdin]))"
+
+# Mess that doesn't make sense
+
+cat problem10/sorted_ids.txt| python -c "import sys;from collections import Counter; print(Counter([chr(int(l.strip(), 10)) for l in sys.stdin]))"
+
+# Counter({' ': 40, 'e': 31, 't': 19, 'r': 15, 'o': 13, 'h': 10, 'i': 9, 'a': 8, 's': 8, 'y': 7, 'g': 6, 'n': 6, 'l': 6, 'd': 6, 'u': 4, 'm': 4, ',': 4, 'W': 4, 'w': 4, 'c': 3, 'p': 3, 'v': 3})
+# Let's see what happens if we replace ' ' with e (the most common letter on english) and the rest with a dot
+
+cat problem10/sorted_ids.txt| python -c "import sys;from collections import defaultdict;d=defaultdict(lambda: '.');d[32] = 'e';d[101]='a'; print(''.join([d[int(l.strip(), 10)] for l in sys.stdin]))"
+
+# ..e....ee....a..a....e.e...a...e.a..ea....e.e.e.e.e...eae..a.e.a...aaea....e.e....e.e..a.....ea.e.e..e..e...e........a..e...ae..a........ea......a...a..e.e....ae...a.ee.e.e...a..a.e......e....ae.a.a.aa..ea..a.a...
+
+# Doesn't make much more sense. 
+
+# Let's try something else
+
+tcpdump -r inputs/icmps.pcap | awk '{print $12}' | tr -d ',' > problem10/echo_seq_decimal.txt
+paste -d " " problem10/echo_seq_decimal.txt problem10/echo_data.txt | sort -n | awk '{print $2}' > problem10/data_sorted.txt
+
+# It starts with bytes 89 50 4E 47 0D 0A 1A 0A, which is the magic number of a png. So let's make it happen. The image is a QR code with the password
+
+

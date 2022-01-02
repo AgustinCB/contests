@@ -1,0 +1,346 @@
+b"Welcome, my friend! You are at the beginning of a long dark dungeon. What do you want to do? Enter order (empty line or 'bye' for finish):\nnorth - south - east - west - look - where am I - go to x,y - is exit? - bye\n"
+go to 0,0
+
+Great movement. Here is your new position: (0, 0)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: west
+[[1, 0]]
+go to 1,0
+
+Great movement. Here is your new position: (1, 0)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: north west east
+[[1, 1], [2, 0], [0, 0]]
+go to 2,0
+
+Great movement. Here is your new position: (2, 0)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: west east
+[[3, 0], [1, 0]]
+go to 3,0
+
+Great movement. Here is your new position: (3, 0)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: west east
+[[4, 0], [2, 0]]
+go to 4,0
+
+Great movement. Here is your new position: (4, 0)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: west east
+[[5, 0], [3, 0]]
+go to 5,0
+
+Great movement. Here is your new position: (5, 0)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: west east
+[[6, 0], [4, 0]]
+go to 6,0
+
+Great movement. Here is your new position: (6, 0)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: north east
+[[6, 1], [5, 0]]
+go to 6,1
+
+Great movement. Here is your new position: (6, 1)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: north south
+[[6, 2], [6, 0]]
+go to 6,2
+
+Great movement. Here is your new position: (6, 2)
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[6, 1], [7, 0], [5, 0]]
+go to 7,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[7, -1], [8, 0], [6, 0]]
+go to 8,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[8, -1], [9, 0], [7, 0]]
+go to 9,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[9, -1], [10, 0], [8, 0]]
+go to 10,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[10, -1], [11, 0], [9, 0]]
+go to 11,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[11, -1], [12, 0], [10, 0]]
+go to 12,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[12, -1], [13, 0], [11, 0]]
+go to 13,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[13, -1], [14, 0], [12, 0]]
+go to 14,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[14, -1], [15, 0], [13, 0]]
+go to 15,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[15, -1], [16, 0], [14, 0]]
+go to 16,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[16, -1], [17, 0], [15, 0]]
+go to 17,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[17, -1], [18, 0], [16, 0]]
+go to 18,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[18, -1], [19, 0], [17, 0]]
+go to 19,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[19, -1], [20, 0], [18, 0]]
+go to 20,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[20, -1], [21, 0], [19, 0]]
+go to 21,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[21, -1], [22, 0], [20, 0]]
+go to 22,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[22, -1], [23, 0], [21, 0]]
+go to 23,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[23, -1], [24, 0], [22, 0]]
+go to 24,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[24, -1], [25, 0], [23, 0]]
+go to 25,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[25, -1], [26, 0], [24, 0]]
+go to 26,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[26, -1], [27, 0], [25, 0]]
+go to 27,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[27, -1], [28, 0], [26, 0]]
+go to 28,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[28, -1], [29, 0], [27, 0]]
+go to 29,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[29, -1], [30, 0], [28, 0]]
+go to 30,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[30, -1], [31, 0], [29, 0]]
+go to 31,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+
+No. Sorry, traveller...
+look
+
+Well, well, well, my friend. You could do these movements: south west east
+[[31, -1], [32, 0], [30, 0]]
+go to 32,0
+
+Not allowed. You can't go to a not checked position
+is exit?
+

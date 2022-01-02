@@ -1,0 +1,4 @@
+The text had invalid unicode characters. Each of those characters had the hexadecimal prefix 0x000e00.
+
+If you subtract the prefix for all those characters, you get a list of bytes. If you subtract 46 from those bytes, you
+get the character code of the response.
