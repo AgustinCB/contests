@@ -3,7 +3,7 @@ from typing import Dict
 
 
 def get_nth_spoken_number(nth: int, numbers: Dict[int, int]) -> int:
-    last_round, last_number = max((i, n)for (n, i) in numbers.items())
+    last_round, last_number = max((i, n) for (n, i) in numbers.items())
     previous_numbers = {}
 
     for i in range(last_round + 1, nth):
