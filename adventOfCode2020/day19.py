@@ -24,7 +24,6 @@ def parse_rules() -> Rules:
 def match_list(content: str, rule: List[int], rules: Rules) -> (bool, str):
     current_content = content
     for rule in rule:
-        prev_content = current_content
         matched, current_content = match_rule(current_content, rule, rules)
         if not matched:
             return False, content
@@ -59,10 +58,10 @@ def solve():
                 total += 1
         return total
     if sys.argv[1] == 'part2':
-        rules[0] = [8, 11]
         rules[8] = ([42], [42, 8])
         rules[11] = ([42, 31], [42, 11, 31])
         """
+        Given that 0 = [8, 11],
         The input has to have the form:
         [42] [42] ... [42] [31] [31] ... [31]
         Where the numbers of 42s is major than the number of 31s
