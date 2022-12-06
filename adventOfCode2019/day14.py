@@ -37,18 +37,33 @@ def flatten_tree(tree: Dict[str, Tuple[int, Dict[str, int]]]) -> Dict[str, Tuple
             flattened_tree[ingredient] = (quantity, ingredients, {})
             return
 
+        leftovers = defaultdict(int)
         flattened_ingredients = defaultdict(int)
         for (ingredient_ingredient, needed_ingredient_quantity) in ingredients.items():
             add_ingredient(ingredient_ingredient)
-            if ingredient_ingredient in ore_based:
-                flattened_ingredients[ingredient_ingredient] += needed_ingredient_quantity
-                continue
             produced_ingredients = flattened_tree[ingredient_ingredient][0]
+            if ingredient_ingredient in ore_based:
+                if leftovers[ingredient_ingredient] < needed_ingredient_quantity:
+                    # flattened_ingredients[ingredient_ingredient] += needed_ingredient_quantity
+                    leftovers[ingredient_ingredient] += produced_ingredients - needed_ingredient_quantity
+                else:
+                    leftovers[ingredient_ingredient] -= needed_ingredient_quantity
+                # continue
+                flattened_ingredients[ingredient_ingredient] += needed_ingredient_quantity
+                leftovers[ingredient_ingredient] += produced_ingredients - needed_ingredient_quantity
+                continue
             for (i, q) in flattened_tree[ingredient_ingredient][1].items():
                 print("ING {}: {} ({} {})".format(i, math.ceil(needed_ingredient_quantity / produced_ingredients) * q, needed_ingredient_quantity, q))
-                flattened_ingredients[i] += math.ceil(needed_ingredient_quantity / produced_ingredients) * q
+                quantity_to_consume = math.ceil(needed_ingredient_quantity / produced_ingredients) * q
+                if leftovers[i] < needed_ingredient_quantity:
+                    # flattened_ingredients[i] += q
+                    leftovers[i] += quantity_to_consume - q
+                else:
+                    leftovers[i] -= q
+                flattened_ingredients[i] += q
+                leftovers[i] += quantity_to_consume - q
             print("{} {}".format(ingredient_ingredient, flattened_ingredients))
-        flattened_tree[ingredient] = (quantity, flattened_ingredients, {})
+        flattened_tree[ingredient] = (quantity, flattened_ingredients, leftovers)
 
     add_ingredient("FUEL")
     return flattened_tree
@@ -72,14 +87,14 @@ def flatten_tree(tree: Dict[str, Tuple[int, Dict[str, int]]]) -> Dict[str, Tuple
   'JNWZP': (7, {'ORE': 144}, {}),
   'VJHF': (6, {'ORE': 176}), {},
   'MNCFX': (6, {'ORE': 145}, {}),
-  'VPVL': (8, defaultdict(<class 'int'>, {'NVRVD': 17, 'JNWZP': 3}), {'NVRVD': 3, 'JNWZP': 4}),
-  'FWMGM': (5, defaultdict(<class 'int'>, {'VJHF': 22, 'MNCFX': 37}), {'VJHF': 2, 'MNCFX': 5}),
-  'CXFTF': (8, defaultdict(<class 'int'>, {'NVRVD': 1}), {'NVRVD': 3}),
-  'RFSQX': (4, defaultdict(<class 'int'>, {'VJHF': 1, 'MNCFX': 6}), {'VJHF': 5, 'MNCFX': 0}),
-  'STKFG': (1, defaultdict(<class 'int'>, {'NVRVD': 18, 'JNWZP': 3, 'VJHF': 44, 'MNCFX': 85}), {'NVRVD': 18, 'JNWZP': 3, 'VJHF': 44, 'MNCFX': 85}),
-  'HVMC': (3, defaultdict(<class 'int'>, {'MNCFX': 54, 'VJHF': 24, 'NVRVD': 20, 'JNWZP': 3})),
-  'GNMV': (6, defaultdict(<class 'int'>, {'VJHF': 5, 'MNCFX': 7, 'NVRVD': 39, 'JNWZP': 6})),
-  'FUEL': (1, defaultdict(<class 'int'>, {'NVRVD': 1698, 'JNWZP': 270, 'VJHF': 3051, 'MNCFX': 6004}))
+  'VPVL': (8, {'NVRVD': 17, 'JNWZP': 3}, {'NVRVD': 3, 'JNWZP': 4}),
+  'FWMGM': (5, {'VJHF': 22, 'MNCFX': 37}, {'VJHF': 2, 'MNCFX': 5}),
+  'CXFTF': (8, {'NVRVD': 1}, {'NVRVD': 3}),
+  'RFSQX': (4, {'VJHF': 1, 'MNCFX': 6}, {'VJHF': 5, 'MNCFX': 0}),
+  'STKFG': (1, {'NVRVD': 18, 'JNWZP': 3, 'VJHF': 44, 'MNCFX': 85}, {'NVRVD': 2, 'JNWZP': 2, 'VJHF': 4, 'MNCFX': 5}),
+  'HVMC': (3, {'MNCFX': 54, 'VJHF': 24, 'NVRVD': 20, 'JNWZP': 3}, {'JNWZP': 4}),
+  'GNMV': (6, {'VJHF': 5, 'MNCFX': 7, 'NVRVD': 39, 'JNWZP': 6}, {'VJHF': 1, 'MNCFX': 5, 'NVRVD': 1, 'JNWZP': 1}),
+  'FUEL': (1, {'NVRVD': 1698, 'JNWZP': 270, 'VJHF': 3051, 'MNCFX': 6004})
 }
 """
 
