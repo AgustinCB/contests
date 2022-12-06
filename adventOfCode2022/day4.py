@@ -15,10 +15,10 @@ def range_contains_range(first: Range, second: Range) -> bool:
 
 def ranges_overlap(first: Range, second: Range) -> bool:
     return (range_contains_range(first, second) or
-        (first[0] >= second[0] and first[0] <= second[1]) or
-        (second[0] >= first[0] and second[0] <= first[1]) or
-        (first[1] <= second[1] and first[1] >= second[0]) or
-        (second[1] <= first[1] and second[1] >= first[0])
+        (second[0] <= first[0] <= second[1]) or
+        (first[0] <= second[0] <= first[1]) or
+        (second[0] <= first[1] <= second[1]) or
+        (first[0] <= second[1] <= first[1])
     )
 
 
